@@ -39,11 +39,17 @@ export function isFinished(event: EventData): boolean {
 }
 
 export function isInProgress(event: EventData): boolean {
-  return event.status === 'Em andamento';
+  // Aceita "Em andamento", "Andamento" ou variações
+  if (!event.status) return false;
+  const status = event.status.toLowerCase().trim();
+  return status === 'em andamento' || status === 'andamento';
 }
 
 export function isToStart(event: EventData): boolean {
-  return event.status === 'A iniciar' || event.status === 'À iniciar';
+  // Aceita "A iniciar", "À iniciar", "à iniciar" ou variações
+  if (!event.status) return false;
+  const status = event.status.toLowerCase().trim();
+  return status === 'a iniciar' || status === 'à iniciar' || status.includes('iniciar');
 }
 
 export interface Stats {

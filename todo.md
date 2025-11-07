@@ -18,3 +18,7 @@
 - [x] Gráfico de quantidade de eventos por local no ano atual
 - [x] Atualização automática dos dados a cada 10 minutos
 - [x] Design responsivo e moderno do dashboard
+
+## Correções Necessárias
+
+- [x] Corrigir lógica de cálculo de eventos "a iniciar" e "em andamento" no dia atual
