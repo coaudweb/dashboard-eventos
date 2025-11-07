@@ -22,3 +22,9 @@
 ## Correções Necessárias
 
 - [x] Corrigir lógica de cálculo de eventos "a iniciar" e "em andamento" no dia atual
+
+## Deploy e Hospedagem
+
+- [x] Configurar vite.config.ts para GitHub Pages
+- [x] Criar workflow do GitHub Actions para deploy automático
+- [x] Atualizar README.md com instruções de deploy no GitHub Pages
