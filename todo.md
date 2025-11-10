@@ -28,3 +28,9 @@
 - [x] Configurar vite.config.ts para GitHub Pages
 - [x] Criar workflow do GitHub Actions para deploy automático
 - [x] Atualizar README.md com instruções de deploy no GitHub Pages
+
+## Correção GitHub Pages
+
+- [x] Corrigir configuração do base path no vite.config.github.ts
+- [x] Atualizar workflow do GitHub Actions
+- [ ] Testar deploy no GitHub Pages

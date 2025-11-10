@@ -8,7 +8,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: process.env.VITE_BASE_PATH || "/dashboard-eventos/",
+  base: "/dashboard-eventos/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
