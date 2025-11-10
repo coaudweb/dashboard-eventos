@@ -34,3 +34,8 @@
 - [x] Corrigir configuração do base path no vite.config.github.ts
 - [x] Atualizar workflow do GitHub Actions
 - [ ] Testar deploy no GitHub Pages
+
+## Correção de Roteamento
+
+- [x] Ajustar App.tsx para usar hash routing no GitHub Pages
+- [ ] Testar acesso direto ao dashboard
