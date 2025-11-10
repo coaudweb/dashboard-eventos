@@ -2,7 +2,7 @@ import { useGoogleSheets } from '@/hooks/useGoogleSheets';
 import { calculateStats, calculateMonthlyData, calculateLocationStats } from '@/lib/stats';
 import { StatCard } from '@/components/StatCard';
 import { MonthlyTable } from '@/components/MonthlyTable';
-import { LocationChart } from '@/components/LocationChart';
+import LocationTable from '@/components/LocationTable';
 import { 
   Calendar, 
   CalendarX, 
@@ -160,15 +160,15 @@ export default function Home() {
           <MonthlyTable data={monthlyData} />
         </section>
 
-        {/* Gráficos de Eventos por Local */}
+        {/* Tabelas de Eventos por Local */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-foreground mb-4">Eventos por Local</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <LocationChart 
+            <LocationTable 
               data={locationStatsMonth} 
               title="Eventos por Local no Mês Atual" 
             />
-            <LocationChart 
+            <LocationTable 
               data={locationStatsYear} 
               title="Eventos por Local no Ano" 
             />

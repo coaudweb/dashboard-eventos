@@ -39,3 +39,9 @@
 
 - [x] Ajustar App.tsx para usar hash routing no GitHub Pages
 - [ ] Testar acesso direto ao dashboard
+
+## Melhorias de Visualização
+
+- [x] Criar componente LocationTable para substituir gráficos de barras
+- [x] Substituir LocationChart por LocationTable na página Home
+- [x] Testar visualização das tabelas de eventos por local
