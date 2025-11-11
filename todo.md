@@ -45,3 +45,7 @@
 - [x] Criar componente LocationTable para substituir gráficos de barras
 - [x] Substituir LocationChart por LocationTable na página Home
 - [x] Testar visualização das tabelas de eventos por local
+
+## Ajustes de Layout
+
+- [x] Reordenar estatísticas do dia: Total > A Iniciar > Em Andamento > Cancelados > Finalizados

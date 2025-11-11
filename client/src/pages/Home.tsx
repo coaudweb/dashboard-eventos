@@ -132,16 +132,6 @@ export default function Home() {
               description={new Date().toLocaleDateString('pt-BR')}
             />
             <StatCard
-              title="Eventos Cancelados Hoje"
-              value={stats.cancelledToday}
-              icon={XCircle}
-            />
-            <StatCard
-              title="Eventos Finalizados"
-              value={stats.finishedToday}
-              icon={CheckCircle2}
-            />
-            <StatCard
               title="Eventos a Iniciar"
               value={stats.toStartToday}
               icon={PlayCircle}
@@ -150,6 +140,16 @@ export default function Home() {
               title="Eventos em Andamento"
               value={stats.inProgressToday}
               icon={Loader2}
+            />
+            <StatCard
+              title="Eventos Cancelados Hoje"
+              value={stats.cancelledToday}
+              icon={XCircle}
+            />
+            <StatCard
+              title="Eventos Finalizados"
+              value={stats.finishedToday}
+              icon={CheckCircle2}
             />
           </div>
         </section>
