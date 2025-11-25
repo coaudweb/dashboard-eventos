@@ -83,44 +83,6 @@ export default function Home() {
       </header>
 
       <main className="container py-8">
-        {/* Estatísticas do Ano */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas do Ano</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <StatCard
-              title="Total de Eventos no Ano"
-              value={stats.totalYear}
-              icon={Calendar}
-              description={`Ano ${new Date().getFullYear()}`}
-            />
-            <StatCard
-              title="Eventos Cancelados no Ano"
-              value={stats.cancelledYear}
-              icon={CalendarX}
-              description={`${stats.totalYear > 0 ? ((stats.cancelledYear / stats.totalYear) * 100).toFixed(1) : 0}% de cancelamento`}
-            />
-          </div>
-        </section>
-
-        {/* Estatísticas do Mês */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas do Mês Atual</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <StatCard
-              title="Total de Eventos no Mês"
-              value={stats.totalMonth}
-              icon={CalendarCheck}
-              description={new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
-            />
-            <StatCard
-              title="Eventos Cancelados no Mês"
-              value={stats.cancelledMonth}
-              icon={CalendarX}
-              description={`${stats.totalMonth > 0 ? ((stats.cancelledMonth / stats.totalMonth) * 100).toFixed(1) : 0}% de cancelamento`}
-            />
-          </div>
-        </section>
-
         {/* Estatísticas do Dia */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas de Hoje</h2>
@@ -150,6 +112,44 @@ export default function Home() {
               title="Eventos Finalizados"
               value={stats.finishedToday}
               icon={CheckCircle2}
+            />
+          </div>
+        </section>
+
+        {/* Estatísticas do Mês */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas do Mês Atual</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <StatCard
+              title="Total de Eventos no Mês"
+              value={stats.totalMonth}
+              icon={CalendarCheck}
+              description={new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
+            />
+            <StatCard
+              title="Eventos Cancelados no Mês"
+              value={stats.cancelledMonth}
+              icon={CalendarX}
+              description={`${stats.totalMonth > 0 ? ((stats.cancelledMonth / stats.totalMonth) * 100).toFixed(1) : 0}% de cancelamento`}
+            />
+          </div>
+        </section>
+
+        {/* Estatísticas do Ano */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas do Ano</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <StatCard
+              title="Total de Eventos no Ano"
+              value={stats.totalYear}
+              icon={Calendar}
+              description={`Ano ${new Date().getFullYear()}`}
+            />
+            <StatCard
+              title="Eventos Cancelados no Ano"
+              value={stats.cancelledYear}
+              icon={CalendarX}
+              description={`${stats.totalYear > 0 ? ((stats.cancelledYear / stats.totalYear) * 100).toFixed(1) : 0}% de cancelamento`}
             />
           </div>
         </section>
