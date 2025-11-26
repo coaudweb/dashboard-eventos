@@ -51,3 +51,7 @@
 - [x] Reordenar estatísticas do dia: Total > A Iniciar > Em Andamento > Cancelados > Finalizados
 
 - [x] Reordenar seções: Estatísticas de Hoje > Estatísticas Mensais > Estatísticas do Ano
+
+## Ajustes de Estilo
+
+- [x] Remover barra de rolagem lateral direita

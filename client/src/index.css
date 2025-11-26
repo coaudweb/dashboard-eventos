@@ -120,6 +120,16 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    /* Ocultar barra de rolagem */
+    overflow-x: hidden;
+  }
+  /* Ocultar scrollbar em navegadores Webkit (Chrome, Safari, Edge) */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  /* Ocultar scrollbar no Firefox */
+  body {
+    scrollbar-width: none;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
