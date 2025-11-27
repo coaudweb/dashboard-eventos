@@ -119,7 +119,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Layout: Estatísticas do Mês (2 colunas), Estatísticas do Ano (2 colunas) e Gráfico de Barras (6 colunas) */}
+        {/* Layout: Estatísticas do Mês (2 colunas), Eventos Mês a Mês (6 colunas) e Estatísticas do Ano (2 colunas) */}
         <section className="mb-8">
           <div className="grid grid-cols-1 xl:grid-cols-10 gap-6">
             {/* Estatísticas do Mês - 2 colunas (mesma largura de 2 cards de hoje) */}
@@ -131,8 +131,13 @@ export default function Home() {
                 period={new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
               />
             </div>
+
+            {/* Eventos Mês a Mês - 6 colunas (meio) */}
+            <div className="xl:col-span-6">
+              <HorizontalBarChart data={monthlyData} />
+            </div>
             
-            {/* Estatísticas do Ano - 2 colunas (mesma largura de 2 cards de hoje) */}
+            {/* Estatísticas do Ano - 2 colunas (direita) */}
             <div className="xl:col-span-2">
               <DonutChart
                 title="Estatísticas do Ano"
@@ -140,11 +145,6 @@ export default function Home() {
                 cancelledEvents={stats.cancelledYear}
                 period={`Ano ${new Date().getFullYear()}`}
               />
-            </div>
-
-            {/* Gráfico de Barras - 6 colunas (restante do espaço) */}
-            <div className="xl:col-span-6">
-              <HorizontalBarChart data={monthlyData} />
             </div>
           </div>
         </section>

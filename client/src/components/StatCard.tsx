@@ -26,7 +26,7 @@ export function StatCard({ title, value, icon: Icon, description, color, trend }
         <Icon className="h-5 w-5" style={{ color: 'white' }} />
       </CardHeader>
       <CardContent>
-        <div className="text-3xl font-bold" style={{ color: 'white' }}>{value}</div>
+        <div className="text-5xl font-bold" style={{ color: 'white' }}>{value}</div>
         {description && (
           <p className="text-xs mt-1" style={{ color: color ? 'rgba(255,255,255,0.8)' : 'var(--muted-foreground)' }}>{description}</p>
         )}

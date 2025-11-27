@@ -74,3 +74,8 @@
 ## Ajustes de Largura
 
 - [x] Ajustar largura dos cards de Estatísticas do Mês e Ano para corresponder aos cards de eventos de hoje
+
+## Ajustes Finais
+
+- [x] Reordenar seções: Estatísticas do Mês → Eventos Mês a Mês → Estatísticas do Ano
+- [x] Aumentar fonte dos números das estatísticas de hoje
