@@ -62,3 +62,7 @@
 - [x] Ajustar cores de texto para tema claro
 - [x] Redimensionar componentes para resolução 1920x1080
 - [x] Implementar graduação dinâmica de cores nas barras (menor valor = mais claro, maior valor = mais escuro)
+
+## Configuração de Atualização
+
+- [x] Alterar tempo de atualização automática de 10 minutos para 2 minutos

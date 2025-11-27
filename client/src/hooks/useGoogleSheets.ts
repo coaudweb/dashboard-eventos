@@ -83,8 +83,8 @@ export function useGoogleSheets() {
   useEffect(() => {
     fetchData();
     
-    // Atualizar a cada 10 minutos (600000 ms)
-    const interval = setInterval(fetchData, 600000);
+    // Atualizar a cada 2 minutos (120000 ms)
+    const interval = setInterval(fetchData, 120000);
     
     return () => clearInterval(interval);
   }, []);
