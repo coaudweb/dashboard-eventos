@@ -119,20 +119,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Layout em 2 colunas: Estatísticas à esquerda, Gráfico à direita */}
+        {/* Layout em 3 colunas: Estatísticas do Mês, Estatísticas do Ano e Gráfico de Barras */}
         <section className="mb-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Coluna Esquerda - Estatísticas (33%) */}
-            <div className="lg:col-span-1 space-y-6">
-              {/* Estatísticas do Mês */}
+            {/* Coluna 1 - Estatísticas do Mês */}
+            <div>
               <DonutChart
                 title="Estatísticas do Mês Atual"
                 totalEvents={stats.totalMonth}
                 cancelledEvents={stats.cancelledMonth}
                 period={new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
               />
-              
-              {/* Estatísticas do Ano */}
+            </div>
+            
+            {/* Coluna 2 - Estatísticas do Ano */}
+            <div>
               <DonutChart
                 title="Estatísticas do Ano"
                 totalEvents={stats.totalYear}
@@ -141,8 +142,8 @@ export default function Home() {
               />
             </div>
 
-            {/* Coluna Direita - Gráfico de Barras (67%) */}
-            <div className="lg:col-span-2">
+            {/* Coluna 3 - Gráfico de Barras */}
+            <div>
               <HorizontalBarChart data={monthlyData} />
             </div>
           </div>

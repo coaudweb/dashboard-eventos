@@ -66,3 +66,7 @@
 ## Configuração de Atualização
 
 - [x] Alterar tempo de atualização automática de 10 minutos para 2 minutos
+
+## Reorganização de Layout
+
+- [x] Colocar Estatísticas do Mês, Estatísticas do Ano e Eventos Mês a Mês na mesma linha horizontal
