@@ -70,3 +70,7 @@
 ## Reorganização de Layout
 
 - [x] Colocar Estatísticas do Mês, Estatísticas do Ano e Eventos Mês a Mês na mesma linha horizontal
+
+## Ajustes de Largura
+
+- [x] Ajustar largura dos cards de Estatísticas do Mês e Ano para corresponder aos cards de eventos de hoje

@@ -119,11 +119,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Layout em 3 colunas: Estatísticas do Mês, Estatísticas do Ano e Gráfico de Barras */}
+        {/* Layout: Estatísticas do Mês (2 colunas), Estatísticas do Ano (2 colunas) e Gráfico de Barras (6 colunas) */}
         <section className="mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Coluna 1 - Estatísticas do Mês */}
-            <div>
+          <div className="grid grid-cols-1 xl:grid-cols-10 gap-6">
+            {/* Estatísticas do Mês - 2 colunas (mesma largura de 2 cards de hoje) */}
+            <div className="xl:col-span-2">
               <DonutChart
                 title="Estatísticas do Mês Atual"
                 totalEvents={stats.totalMonth}
@@ -132,8 +132,8 @@ export default function Home() {
               />
             </div>
             
-            {/* Coluna 2 - Estatísticas do Ano */}
-            <div>
+            {/* Estatísticas do Ano - 2 colunas (mesma largura de 2 cards de hoje) */}
+            <div className="xl:col-span-2">
               <DonutChart
                 title="Estatísticas do Ano"
                 totalEvents={stats.totalYear}
@@ -142,8 +142,8 @@ export default function Home() {
               />
             </div>
 
-            {/* Coluna 3 - Gráfico de Barras */}
-            <div>
+            {/* Gráfico de Barras - 6 colunas (restante do espaço) */}
+            <div className="xl:col-span-6">
               <HorizontalBarChart data={monthlyData} />
             </div>
           </div>
