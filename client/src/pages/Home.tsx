@@ -1,8 +1,8 @@
 import { useGoogleSheets } from '@/hooks/useGoogleSheets';
-import { calculateStats, calculateMonthlyData, calculateLocationStats } from '@/lib/stats';
+import { calculateStats, calculateMonthlyData } from '@/lib/stats';
 import { StatCard } from '@/components/StatCard';
-import { MonthlyTable } from '@/components/MonthlyTable';
-import LocationTable from '@/components/LocationTable';
+import { DonutChart } from '@/components/DonutChart';
+import { HorizontalBarChart } from '@/components/HorizontalBarChart';
 import { 
   Calendar, 
   CalendarX, 
@@ -47,8 +47,6 @@ export default function Home() {
 
   const stats = calculateStats(data);
   const monthlyData = calculateMonthlyData(data);
-  const locationStatsMonth = calculateLocationStats(data, 'month');
-  const locationStatsYear = calculateLocationStats(data, 'year');
 
   return (
     <div className="min-h-screen bg-background">
@@ -92,86 +90,61 @@ export default function Home() {
               value={stats.totalToday}
               icon={CalendarClock}
               description={new Date().toLocaleDateString('pt-BR')}
+              color="#2D6A5A"
             />
             <StatCard
               title="Eventos a Iniciar"
               value={stats.toStartToday}
               icon={PlayCircle}
+              color="#5A9B8A"
             />
             <StatCard
               title="Eventos em Andamento"
               value={stats.inProgressToday}
               icon={Loader2}
+              color="#7DBDAD"
             />
             <StatCard
               title="Eventos Cancelados Hoje"
               value={stats.cancelledToday}
               icon={XCircle}
+              color="#A8C97F"
             />
             <StatCard
               title="Eventos Finalizados"
               value={stats.finishedToday}
               icon={CheckCircle2}
+              color="#C5D9A4"
             />
           </div>
         </section>
 
-        {/* Estatísticas do Mês */}
+        {/* Layout em 2 colunas: Estatísticas à esquerda, Gráfico à direita */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas do Mês Atual</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <StatCard
-              title="Total de Eventos no Mês"
-              value={stats.totalMonth}
-              icon={CalendarCheck}
-              description={new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
-            />
-            <StatCard
-              title="Eventos Cancelados no Mês"
-              value={stats.cancelledMonth}
-              icon={CalendarX}
-              description={`${stats.totalMonth > 0 ? ((stats.cancelledMonth / stats.totalMonth) * 100).toFixed(1) : 0}% de cancelamento`}
-            />
-          </div>
-        </section>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Coluna Esquerda - Estatísticas (33%) */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Estatísticas do Mês */}
+              <DonutChart
+                title="Estatísticas do Mês Atual"
+                totalEvents={stats.totalMonth}
+                cancelledEvents={stats.cancelledMonth}
+                period={new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}
+              />
+              
+              {/* Estatísticas do Ano */}
+              <DonutChart
+                title="Estatísticas do Ano"
+                totalEvents={stats.totalYear}
+                cancelledEvents={stats.cancelledYear}
+                period={`Ano ${new Date().getFullYear()}`}
+              />
+            </div>
 
-        {/* Estatísticas do Ano */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Estatísticas do Ano</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <StatCard
-              title="Total de Eventos no Ano"
-              value={stats.totalYear}
-              icon={Calendar}
-              description={`Ano ${new Date().getFullYear()}`}
-            />
-            <StatCard
-              title="Eventos Cancelados no Ano"
-              value={stats.cancelledYear}
-              icon={CalendarX}
-              description={`${stats.totalYear > 0 ? ((stats.cancelledYear / stats.totalYear) * 100).toFixed(1) : 0}% de cancelamento`}
-            />
-          </div>
-        </section>
-
-        {/* Tabela Mensal */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Eventos Mês a Mês</h2>
-          <MonthlyTable data={monthlyData} />
-        </section>
-
-        {/* Tabelas de Eventos por Local */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">Eventos por Local</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <LocationTable 
-              data={locationStatsMonth} 
-              title="Eventos por Local no Mês Atual" 
-            />
-            <LocationTable 
-              data={locationStatsYear} 
-              title="Eventos por Local no Ano" 
-            />
+            {/* Coluna Direita - Gráfico de Barras (67%) */}
+            <div className="lg:col-span-2">
+              <HorizontalBarChart data={monthlyData} />
+            </div>
           </div>
         </section>
       </main>
