@@ -79,3 +79,8 @@
 
 - [x] Reordenar seções: Estatísticas do Mês → Eventos Mês a Mês → Estatísticas do Ano
 - [x] Aumentar fonte dos números das estatísticas de hoje
+
+## Ajustes de Layout e Rolagem
+
+- [x] Remover barra de rolagem mesmo quando conteúdo for maior que área exibida
+- [x] Ajustar altura do gráfico Eventos Mês a Mês para corresponder à altura dos gráficos de rosca

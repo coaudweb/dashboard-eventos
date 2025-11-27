@@ -36,12 +36,12 @@ export function HorizontalBarChart({ data }: HorizontalBarChartProps) {
   };
 
   return (
-    <Card className="bg-card/50 backdrop-blur border-border/50">
+    <Card className="bg-card/50 backdrop-blur border-border/50 h-full flex flex-col">
       <CardHeader>
         <CardTitle className="text-lg font-semibold">Eventos Mês a Mês</CardTitle>
       </CardHeader>
-      <CardContent>
-        <ResponsiveContainer width="100%" height={350}>
+      <CardContent className="flex-1">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
             layout="vertical"
