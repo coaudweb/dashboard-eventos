@@ -29,27 +29,27 @@ export function DonutChart({ title, totalEvents, cancelledEvents, period }: Donu
       <CardContent>
         <div className="flex flex-col items-center gap-6">
           {/* Números principais */}
-          <div className="w-full space-y-4">
+          <div className="w-full space-y-2">
             <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-1">Total de Eventos no {title.includes('Mês') ? 'Mês' : 'Ano'}</p>
-              <p className="text-4xl font-bold text-foreground">{totalEvents}</p>
+              <p className="text-xs text-muted-foreground mb-1">Total de Eventos no {title.includes('Mês') ? 'Mês' : 'Ano'}</p>
+              <p className="text-3xl font-bold text-foreground">{totalEvents}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-1">Eventos Cancelados no {title.includes('Mês') ? 'Mês' : 'Ano'}</p>
-              <p className="text-4xl font-bold text-foreground">{cancelledEvents}</p>
+              <p className="text-xs text-muted-foreground mb-1">Eventos Cancelados no {title.includes('Mês') ? 'Mês' : 'Ano'}</p>
+              <p className="text-3xl font-bold text-foreground">{cancelledEvents}</p>
             </div>
           </div>
 
           {/* Gráfico de Rosca */}
-          <div className="w-full h-48">
+          <div className="w-full h-32">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={data}
                   cx="50%"
                   cy="50%"
-                  innerRadius={50}
-                  outerRadius={80}
+                  innerRadius={35}
+                  outerRadius={55}
                   paddingAngle={2}
                   dataKey="value"
                 >

@@ -55,3 +55,10 @@
 ## Ajustes de Estilo
 
 - [x] Remover barra de rolagem lateral direita
+
+## Ajustes de Design e Layout
+
+- [x] Mudar background para tema claro (branco/cinza claro)
+- [x] Ajustar cores de texto para tema claro
+- [x] Redimensionar componentes para resolução 1920x1080
+- [x] Implementar graduação dinâmica de cores nas barras (menor valor = mais claro, maior valor = mais escuro)
